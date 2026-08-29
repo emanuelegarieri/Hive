@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 func ToUpperCase(s string) string {
 	var list []rune

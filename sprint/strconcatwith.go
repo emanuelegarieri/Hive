@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 func StrConcatWith(strs []string, sep string) string {
 

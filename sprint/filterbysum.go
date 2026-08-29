@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 // The sum of elements is lower than the given value.
 

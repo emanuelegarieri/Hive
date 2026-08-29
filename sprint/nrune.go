@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 func NRune(s string, i int) rune {
 	var char []rune

@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 func BetweenLimits(from, to rune) string {
 	if from > to {

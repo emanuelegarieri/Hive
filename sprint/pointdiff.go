@@ -1,3 +1,6 @@
+//go:build ignore
+// +build ignore
+
 package main
 
 // Define the structure and its fields

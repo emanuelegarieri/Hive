@@ -1,0 +1,17 @@
+# Go build artifacts
+/bin/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+
+# Go workspace cache
+*.out
+
+# Editor files
+.vscode/
+.DS_Store
+
+# Local project artifacts
+stats.csv

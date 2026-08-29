@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 // Create a function that takes a step value as input. 
 // Starting from z in the Latin alphabet, it should return the lowercase alphabet in reverse order as a string. 

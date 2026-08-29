@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 
 func StrSplitBy(s, sep string) []string {
@@ -23,7 +26,7 @@ func StrSplitBy(s, sep string) []string {
 		// check restart to be empty
 		check = ""
 		if rString[r] == rSep[0] {
-			// for the lenght of the separator
+			// Check the full separator length
 			for i := 0; i < len(rSep); i++ {
 				// until it's valid, we create a word long as much as the separator
 				if r+i < len(rString) {

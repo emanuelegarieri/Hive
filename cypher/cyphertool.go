@@ -15,7 +15,7 @@ func main () {
 func CypherTool() { 
 
 	// Print the greeting message
-	fmt.Println("\n\nWelcome to the encryption tool!\n---\n")
+	fmt.Println("\n\nWelcome to the encryption tool!\n---")
 
 	// Store all the input in 3 different variables
 	toEncrypt, encoding, text := getInput()
@@ -37,15 +37,15 @@ func CypherTool() {
 	// Print the final result
 	fmt.Println("\nHere is your result:")
 	fmt.Println(result)
-	fmt.Println("\n")
+	fmt.Println()
 }
 
-// Function for using Rot13 encryption, it can be used for bot encrypt and decrypt
+// Function for applying Rot13 encryption, suitable for both encryption and decryption
 func rot13(text string) string {
 
 	result := ""
 
-	// For each value of the rune in the lenght of the text
+	// For each rune in the text
 	for _, r := range text {
 		// In case of lowercase letters, is added 13 positions until 'z'
 		if r >= 'a' && r <= 'z' {
@@ -64,8 +64,8 @@ func rot13(text string) string {
 			}
 		}
 
-		// Exeption in digits are handeled in here, cause they didn't pass through the if condition
-		// Values as a string are concatenated in the variable result
+		// Digits are left unchanged here, as they do not match the letter conditions.
+		// Their values are concatenated into the result string.
 		result = result + string(r)
 	}
 
@@ -73,14 +73,14 @@ func rot13(text string) string {
 	return result
 }
 
-// Function for using Reverse Alphabet encryption, it can be used for bot encrypt and decrypt
+// Function for applying reverse alphabet encryption, suitable for both encryption and decryption
 func reverseAlphabet(text string) string {
 
 	result := ""
 
-	// For each value of the text
+	// For each value in the text
 	for _, r := range text {
-		// If it's a lowecase alphabet value
+		// If it is a lowercase alphabetic value
 		if r >= 'a' && r <= 'z' {
 			// The position is mirrored as a lowercase
 			position := r - 'a'
@@ -92,61 +92,61 @@ func reverseAlphabet(text string) string {
 			r = 'Z' - position
 		}
 
-		// Exeption in digits are handeled in here, cause they didn't pass through the if condition
-		// Values as a string are concatenated in the variable result		
+		// Digits are left unchanged here, as they do not match the letter conditions.
+		// Their values are concatenated into the result string.
 		result = result + string(r)
 	}
 	// at the end, the result is sent back to the main function CypherTool
 	return result
 }
 
-// Function for using Chinese encryption, it can be used for bot encrypt and decrypt
+// Function for applying the Chinese conversion, suitable for both encryption and decryption
 func EncryptChinese(text string, toEncrypt bool) string {
 
 	result := ""
 
-	// For each value of the text
+	// For each value in the text
 	for _, r := range text {
-		// If the selection was to encrypt
+		// If the selected action is encryption
 		if toEncrypt == true {
-			// and if the value was lowercase
+			// and if the value is lowercase
 			if r >= 'a' && r <= 'z' {
-				// coverting it in chinese (not translate)
+				// convert it to its Chinese representation without translating the meaning
 				distance := r - 'a'
 				chinese := '淡' + distance
 				result += string(chinese)
 
-			// or if the value was uppercase
+			// or if the value is uppercase
 			} else if r >= 'A' && r <= 'Z' {
-				// coverting it in chinese (not translate)
+				// convert it to its Chinese representation without translating the meaning
 				distance := r - 'A'
 				chinese := '中' + distance
 				result += string(chinese)
 
 			} else {
-				// Exeption in digits are handeled in here, cause they didn't pass through the if condition
-				// Values as a string are concatenated in the variable result	
+				// Digits are left unchanged here, as they do not match the letter conditions.
+				// Their values are concatenated into the result string.
 				result += string(r)
 			}
 		
 			// If the selection was to decrypt
 		} else { 
 
-			// and if the value was lowercase
+			// and if the value is lowercase
 			if r >= '淡' && r <= '淡'+25 {
 				distance := r - '淡'
 				latin := 'a' + distance
 				result += string(latin)
 
-			// or if the value was uppercase
+			// or if the value is uppercase
 			} else if r >= '中' && r <= '中'+25 {
 				distance := r - '中'
 				latin := 'A' + distance
 				result += string(latin)
 
 			} else {
-				// Exeption in digits are handeled in here, cause they didn't pass through the if condition
-				// Values as a string are concatenated in the variable result	
+				// Digits are left unchanged here, as they do not match the letter conditions.
+				// Their values are concatenated into the result string.
 				result += string(r)
 			}
 		}
@@ -166,7 +166,7 @@ scanner := bufio.NewScanner(os.Stdin)
 
 	// The terminal will wait until the user enter a valid input (1 or 2)
 	for {
-		fmt.Println("Choose what you want to do:\n\n- Type 1 if you want to encrypt\n- Type 2 if you want to decrypt\n")
+		fmt.Println("Choose what you want to do:\n\n- Type 1 if you want to encrypt\n- Type 2 if you want to decrypt")
 		// Then the input is read with scanner library
 		scanner.Scan()
 		// It gets trimmed from empty spaces
@@ -182,18 +182,18 @@ scanner := bufio.NewScanner(os.Stdin)
 			break
 		}
 		// If the input was invalid, the for loop goes back to the beginning and it prints an error message
-		fmt.Println("\nInvalid choice.\nPlease, try again:\n---\n")
+		fmt.Println("\nInvalid choice.\nPlease, try again:\n---")
 	}
 	// It prints the user's choice
 	if operation == "1" {
-		fmt.Println("You choosed to: Encrypt\n---\n")
+		fmt.Println("You choosed to: Encrypt\n---")
 	} else {
-		fmt.Println("You choosed to: Decrypt\n---\n")
+		fmt.Println("You choosed to: Decrypt\n---")
 	}
 	
 	for {
 		// The terminal will wait for user input on the type of the chosen encryp/decrypr 
-		fmt.Println ("Choose a cypher:\n\n- Type 1 if you want to use Rot13\n- Type 2 if you want to use Reverse Alphabet\n- Type 3 if you want to use Chinese Converter\n")
+		fmt.Println ("Choose a cypher:\n\n- Type 1 if you want to use Rot13\n- Type 2 if you want to use Reverse Alphabet\n- Type 3 if you want to use Chinese Converter")
 		// Then the input is read with scanner library
 		scanner.Scan()
 		// It gets trimmed from empty spaces
@@ -203,15 +203,15 @@ scanner := bufio.NewScanner(os.Stdin)
 			break
 		}
 		// If the input was invalid, the for loop goes back to the beginning and it prints an error message
-		fmt.Println ("\nInvalid choice.\nPlease, try again:\n---\n")	
+		fmt.Println ("\nInvalid choice.\nPlease, try again:\n---")	
 	}	
 	// It prints the user's choice
 	if encoding == "1" {
-		fmt.Println("You choosed: Rot13\n---\n")
+		fmt.Println("You choosed: Rot13\n---")
 	} else if encoding == "2" {
-		fmt.Println("You choosed: Reverse Alphabet\n---\n")
+		fmt.Println("You choosed: Reverse Alphabet\n---")
 	} else {
-		fmt.Println("You choosed: Chinese Converter\n---\n")
+		fmt.Println("You choosed: Chinese Converter\n---")
 	}
 	
 	for {
@@ -225,7 +225,7 @@ scanner := bufio.NewScanner(os.Stdin)
 				break
 			}
 		// Otherwise, if the input is invalid, an error message is printed and the for loop goes back to the beginning
-		fmt.Println ("\nText field cannot be empty.\nPlease, try again:\n---\n")
+		fmt.Println ("\nText field cannot be empty.\nPlease, try again:\n---")
 	} 
 
 	// At the end the 3 variables are sent back to the main function CypherTool

@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 // Write a Go function that takes an array of booleans and adds the minimum number of booleans necessary so that the count of true and false values in the array is equal. 
 // The function should return the resulting modified array. 

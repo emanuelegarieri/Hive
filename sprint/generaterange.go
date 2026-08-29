@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 // import "fmt"
 
@@ -7,7 +10,7 @@ func GenerateRange(min, max int) []int {
 	if min>= max {
 		return nil
 	}
-	// Create parameter as a slice of integers with lenght based on the distance between min and max
+	// Create a slice of integers sized according to the distance between min and max
 	slice := make([]int, max-min)
 	// We start from position 0
 	position := 0

@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 func RuneChecksum(a rune, b rune) rune{
 	new_pos_a := int(a -'a') +1

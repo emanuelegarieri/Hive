@@ -1,9 +1,12 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 func SimpleStrToInt(s string) int {
 
 	result := 0
-	// for each value in the lenght of the string
+	// Process each character in the string
 	for n := 0; n < len(s); n++ {
 		// if the value is included from 0 to 9, otherwise return 0
 		if s[n] < '0' || s[n] > '9' {

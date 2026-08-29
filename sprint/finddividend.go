@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 
 func FindDividend(from, to, divisor int) int {

@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 func ShiftBy(r rune, step int) rune {
 	position := int(r - 'a')

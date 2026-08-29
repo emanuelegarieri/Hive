@@ -91,7 +91,7 @@ func main() {
 	// Take the match
 	word := words[wordTest]
 
-	// Greet the MTF
+	// Welcome the player
 	fmt.Println("Welcome to Wordle! Guess the 5-letter word.")
 
 	// Until the user don't finish the attempts
@@ -104,7 +104,7 @@ func main() {
 			return
 		}
 
-		// Checky Checky time
+		// Begin the guess validation
 
 		// Must be 5 letters
 		if len([]rune(guess)) != 5 {
@@ -142,11 +142,11 @@ func main() {
 			continue
 		}
 
-		// If the word passed all the security checks:
+		// If the guess passes all validation checks:
 		// Count it as one attempt
 		attemptUsed++
 
-		// We play and we want back -->
+		// Generate the feedback for the guess -->
 		feedback, newLetters := game.CheckGuess(
 			word,
 			guess,
@@ -177,12 +177,12 @@ func main() {
 				strconv.Itoa(attempts-attemptUsed),
 		)
 
-		// If a looser
+		// If the player loses
 		if attemptUsed == attempts {
-			// We say what was the word
+			// Reveal the correct word
 			fmt.Println("Game over. The correct word was: " + word)
 
-			// And we record it as a looser
+			// Record the loss
 			io.WriteCSV(user, word, attemptUsed, "loss")
 			break
 		}

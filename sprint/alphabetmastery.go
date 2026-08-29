@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 
 // Create a function that takes a positive integer as input and returns the corresponding number of letters from the Latin alphabet. 

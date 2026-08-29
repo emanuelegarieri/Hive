@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 
 func SubstrIndex(s string, toFind string) int {
@@ -23,7 +26,7 @@ func SubstrIndex(s string, toFind string) int {
 		check = ""
 		count++
 		if rString[r] == rSep[0] {
-			// for the lenght of the separator
+			// Check the full separator length
 			for i := range len(rSep) {
 				// until it's valid, we create a word long as much as the separator
 				if r+i < len(rString) {

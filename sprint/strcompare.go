@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 // 0 if the strings are equal,
 // -1 if a comes before b in lexicographic order,
@@ -9,7 +12,7 @@ func StrCompare(a, b string) int {
 	rFirst := []rune(a)
 	rSecond := []rune(b)
 
-	// Exeptions
+	// Handle edge cases
 	if a == b {
 		return 0
 	}
@@ -20,7 +23,7 @@ func StrCompare(a, b string) int {
 		return 1
 	}
 
-	// For make it easier, we want a longer than b, cause if a and b are equal for the whole lenght of b, then I know that b comes before a
+	// To simplify the comparison, treat the longer string as the reference if needed
 	if len(b) > len(a) {
 		a, b = b, a
 	}

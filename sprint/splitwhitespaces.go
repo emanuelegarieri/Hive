@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 
 
@@ -14,11 +17,11 @@ func SplitWhitespaces(s string) []string {
 
 	// for each value in the full string
 	for _, r := range s {
-		// Unless we get something weird
+		// If the character is not a whitespace
 		if r > ' ' {
-			// take whatever you get and put it in the string word
+			// Add the character to the current word
 			word = word + string(r)
-		// otherwise, we got something weird that needs to stop the word
+		// Otherwise, end the current word
 		} else {
 			// if the word is not empty, append it to the final result  
 			if word != "" {

@@ -45,7 +45,7 @@ func CheckGuess(word string, guess string, letters string) (string, string) {
 		}
 	}
 
-	// Art attack
+	// Build the feedback display
 	feedback := ""
 	for i := range guessRunes {
 		// Feedback is always uppercase

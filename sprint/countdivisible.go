@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 // Write a Go function that takes four integers as input: from, to, step, and divisor. 
 // The function should check for exceptions and return 0 if any of the following conditions are met:

@@ -1,4 +1,7 @@
-package string
+//go:build ignore
+// +build ignore
+
+package main
 
 func ReverseAlphabetValue(ch rune) rune {
 	position := int(ch - 'a')

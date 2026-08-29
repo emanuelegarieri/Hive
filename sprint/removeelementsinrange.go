@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 
 // Write a Go function that takes an array of float64, two indices, and removes elements that lie between these indices from the array. 
@@ -21,7 +24,7 @@ func RemoveElementsInRange(arr []float64, from, to int) []float64 {
 	if from < 0 {
 		from = 0
 	}
-	// Except the lenght of the array is 0, then return nil
+	// If the array length is 0, return nil
 	if len(arr) == 0 {
 		return nil
 	}

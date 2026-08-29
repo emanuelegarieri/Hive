@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 
 // Create a function that takes a one-digit integer as input and returns a countdown string. 

@@ -1,4 +1,7 @@
-package sprint
+//go:build ignore
+// +build ignore
+
+package main
 
 // If the number is negative, preserve the minus sign. 
 // Replace the digits with lowercase letters, where:
